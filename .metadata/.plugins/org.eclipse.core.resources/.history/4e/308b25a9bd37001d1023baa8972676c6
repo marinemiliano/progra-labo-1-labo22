@@ -1,0 +1,114 @@
+/*
+ ============================================================================
+ Name        : ejercicio.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+
+ Ejercicio 5-5: Pedir 10 números enteros distintos de cero entre -50 y 75.
+ La carga deberá ser aleatoria (todos los elementos se inicializan en cero por default).
+Determinar el promedio de los positivos.
+
+Desde el mayor de los negativos los
+números negativos hasta llegar a cero.
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#define T 5
+
+int pedirNumero(char mensaje);
+void inicializarArray(int listaNumeros[],int tam);
+void cargarArrayAleatorio(int listaNumeros[],int tam);
+void determinarPromedio(int listaNumeros[],int tam);
+void mostrarArray(int listaNumeros[],int tam);
+int validarNumero(int numero,int minimo,int maximo,char mensajeError);
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	int listaNumeros[T];
+
+	inicializarArray(listaNumeros,T);
+	cargarArray(listaNumeros, T);
+
+	return EXIT_SUCCESS;
+}
+
+void inicializarArray(int listaNumeros[],int tam)
+{
+	int i;
+
+	for(i=0;i<tam;i++)
+	{
+		listaNumeros[i]=0;
+	}
+}
+
+void cargarArrayAleatorio(int listaNumeros[],int tam)
+{
+	int i;
+	char seguir;
+	seguir='s';
+	int numero;
+
+	do
+	{
+			numero=pedirNumero("ingrese un numero");
+			numero=validarNumero(numero, -50, 75, "error,reingrese numero");
+
+			i=pedirNumero("ingrese un numero de 1 a 5");
+			i=validarNumero(i, 1, 5, "error,reingrese numero");
+
+			listaNumeros[i-1]=numero;
+
+			printf("desea seguir ingresando numeros si (s) o no (n)");
+			fflush(stdin);
+			scanf("%c",&seguir);
+
+	}while(seguir=='s');
+
+}
+
+int pedirNumero(char mensaje)
+{
+		int numero;
+
+		printf("%s",mensaje);
+		scanf("%d",&numero);
+
+	return numero;
+}
+
+int validarNumero(int numero,int minimo,int maximo,char mensajeError)
+{
+	while(numero < minimo || numero > maximo)
+	{
+		printf("%s",mensajeError);
+		scanf("%d",&numero);
+	}
+
+	return numero;
+}
+
+/*void determinarPromedio(int listaNumeros[],int tam)
+{
+
+}*/
+
+void mostrarArray(int listaNumeros[],int tam)
+{
+	int i;
+
+	for(i=0;i<T;i++)
+	{
+		if(listaNumeros[i]!=0)
+		{
+			printf("%d",listaNumeros[i]);
+		}
+	}
+
+}

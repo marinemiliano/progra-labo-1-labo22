@@ -1,0 +1,7 @@
+15:43:01 **** Incremental Build of configuration Debug for project clase 9 9 ejer 2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase 9 9 ejer 2.o" "..\\src\\clase 9 9 ejer 2.c" 
+gcc -o "clase 9 9 ejer 2.exe" "src\\clase 9 9 ejer 2.o" 
+
+15:43:02 Build Finished. 0 errors, 0 warnings. (took 501ms)
+

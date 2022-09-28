@@ -1,0 +1,13 @@
+16:46:52 **** Incremental Build of configuration Debug for project clase prog 8 9 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\progra.o" "..\\src\\progra.c" 
+..\src\progra.c: In function 'IngresarOperando':
+..\src\progra.c:38:6: warning: unused variable 'retorno' [-Wunused-variable]
+   38 |  int retorno;
+      |      ^~~~~~~
+gcc -o "clase prog 8 9.exe" "src\\clase prog 8 9.o" "src\\progra.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file clase prog 8 9.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:46:58 **** Incremental Build of configuration Debug for project clase prog 8 9 ****
+Info: Internal Builder is used for build
+gcc -o "clase prog 8 9.exe" "src\\clase prog 8 9.o" "src\\progra.o" 

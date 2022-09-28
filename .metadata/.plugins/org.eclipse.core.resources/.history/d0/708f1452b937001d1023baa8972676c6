@@ -1,0 +1,111 @@
+/*
+ ============================================================================
+ Name        : ejercicio.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+
+ Ejercicio 5-5: Pedir 10 números enteros distintos de cero entre -50 y 75.
+ La carga deberá ser aleatoria (todos los elementos se inicializan en cero por default).
+Determinar el promedio de los positivos.
+
+Desde el mayor de los negativos los
+números negativos hasta llegar a cero.
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#define T 5
+
+int pedirNumero();
+void inicializarArray(int listaNumeros[],int tam);
+void cargarArrayAleatorio(int listaNumeros[],int tam);
+void determinarPromedio(int listaNumeros[],int tam);
+int validarNumero(int numero,int minimo,int maximo,char mensaje,char mensajeError);
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	int listaNumeros[T];
+
+	inicializarArray(listaNumeros,T);
+	cargarArray(listaNumeros, T);
+
+	return EXIT_SUCCESS;
+}
+
+void inicializarArray(int listaNumeros[],int tam)
+{
+	int i;
+
+	for(i=0;i<tam;i++)
+	{
+		listaNumeros[i]=0;
+	}
+}
+
+void cargarArrayAleatorio(int listaNumeros[],int tam)
+{
+	int i;
+	char seguir;
+	seguir='s';
+
+	do
+	{
+		for(i=0;i<tam;i++)
+		{
+			listaNumeros[i]=pedirNumero();
+		}
+
+		printf("desea seguir ingresando numeros si (s) o no (n)");
+		fflush(stdin);
+		scanf("%c",&seguir);
+
+	}while(seguir=='s');
+
+}
+
+int pedirNumero()
+{
+	int numero;
+
+
+		printf("ingrese numero");
+		scanf("%d",&numero);
+		numero=validarNumero(numero, -50, 75, "ingrese numero", "error,reingrese numero");
+
+	return numero;
+}
+
+int validarNumero(int numero,int minimo,int maximo,char mensaje,char mensajeError)
+{
+	while(numero < -50 || numero > 75)
+	{
+		printf(mensajeError);
+		scanf("%d",&numero);
+	}
+
+	return numero;
+}
+
+void determinarPromedio(int listaNumeros[],int tam)
+{
+
+}
+
+int i;
+	int numero;
+	char seguir;
+	do{
+		numero=IngresarEntero("ingrese un numero entero");
+		i=IngresarEntero("donde quiere guardar el numero de 1 a 5 ? ");
+
+		cargarLista[i-1]=numero;
+		printf("desea agregar numero");
+		fflush(stdin);
+		scanf("%c",&seguir);
+
+	   }while(seguir=='s');

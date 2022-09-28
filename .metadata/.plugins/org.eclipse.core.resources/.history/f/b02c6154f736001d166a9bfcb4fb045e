@@ -1,0 +1,80 @@
+/*
+ ============================================================================
+ Name        : ejercicio.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+
+ Ejercicio 5-4: Pedir 10 números entre -100 y 100, guardarlos en un Array.
+ Determinar:
+a) Cantidad de negativos.
+b) Sumatoria de los impares.
+c) El mayor de los pares.
+d) Listado de los números ingresados.
+e) Listado de los números mayores a 15.
+f) Listado de los números de las posiciones impares.
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#define  T 10
+
+int pedirNumero();
+int validarNumero(int numero,char mensaje[],int minmo, int maximo,char mensajeError[]);
+void cargarArray(listaNumeros[],int tam);
+void mostrarArray(listaNumeros[],int tam);
+
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+	int listaNumeros[T];
+
+
+	cargarArray(listaNumeros, T);
+
+	return 0;
+}
+ int pedirNumero()
+ {
+	 int numero;
+
+	 printf("ingrese numero");
+	 scanf("%d",&numero);
+
+	 numero=validarNumero(numero,"ingrese numero",-100,100,"error reingrese");
+
+	 return numero;
+ }
+
+ int validarNumero(int numero,char mensaje[],int minmo, int maximo,char mensajeError[])
+ {
+	 while(numero < -100 || numero > 100)
+	 {
+		 printf(mensajeError);
+		 scanf("%s",mensaje);
+	 }
+
+	 return numero;
+ }
+
+ void cargarArray(listaNumeros[],int tam)
+ {
+	 int i;
+
+	 for(i=0;i<tam;i++)
+	 {
+		 listaNumeros[i]=pedirNumero();
+	 }
+
+ }
+ void mostrarArray(listaNumeros[],int tam)
+ {
+	 for(i=0;i<tam;i++)
+		 {
+			printf("%d\n", listaNumeros[i]);
+		 }
+ }
+

@@ -1,0 +1,7 @@
+18:54:02 **** Incremental Build of configuration Debug for project ejercicio 2-2 otra resolucion ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio 2-2 otra resolucion.o" "..\\src\\ejercicio 2-2 otra resolucion.c" 
+gcc -o "ejercicio 2-2 otra resolucion.exe" "src\\ejercicio 2-2 otra resolucion.o" 
+
+18:54:02 Build Finished. 0 errors, 0 warnings. (took 611ms)
+
